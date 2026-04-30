@@ -8,4 +8,6 @@ version="$1"
 curl -LO "https://releases.hashicorp.com/terraform/${version}/terraform_${version}_linux_amd64.zip"
 unzip -o "terraform_${version}_linux_amd64.zip"
 
-./terraform init
+rm -rf .terraform
+
+TF_LOG=trace ./terraform init -no-color 2>&1 | tee "terraform-init-${version}.log"

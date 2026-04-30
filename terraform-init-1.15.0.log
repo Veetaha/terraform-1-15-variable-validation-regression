@@ -1,0 +1,140 @@
+2026-04-30T11:37:52.936Z [INFO]  Terraform version: 1.15.0
+2026-04-30T11:37:52.936Z [DEBUG] using github.com/hashicorp/go-tfe v1.94.0
+2026-04-30T11:37:52.936Z [DEBUG] using github.com/hashicorp/hcl/v2 v2.24.0
+2026-04-30T11:37:52.936Z [DEBUG] using github.com/hashicorp/terraform-svchost v0.2.1
+2026-04-30T11:37:52.936Z [DEBUG] using github.com/zclconf/go-cty v1.18.0
+2026-04-30T11:37:52.936Z [INFO]  Go runtime version: go1.25.8
+2026-04-30T11:37:52.936Z [INFO]  CLI args: []string{"./terraform", "init", "-no-color"}
+2026-04-30T11:37:52.936Z [TRACE] Stdout is not a terminal
+2026-04-30T11:37:52.936Z [TRACE] Stderr is not a terminal
+2026-04-30T11:37:52.936Z [TRACE] Stdin is a terminal
+2026-04-30T11:37:52.936Z [DEBUG] Attempting to open CLI config file: /home/elastio/.terraformrc
+2026-04-30T11:37:52.936Z [DEBUG] File doesn't exist, but doesn't need to. Ignoring.
+2026-04-30T11:37:52.936Z [DEBUG] ignoring non-existing provider search directory terraform.d/plugins
+2026-04-30T11:37:52.936Z [DEBUG] ignoring non-existing provider search directory /home/elastio/.terraform.d/plugins
+2026-04-30T11:37:52.936Z [DEBUG] ignoring non-existing provider search directory /home/elastio/.local/share/terraform/plugins
+2026-04-30T11:37:52.936Z [DEBUG] ignoring non-existing provider search directory /usr/local/share/terraform/plugins
+2026-04-30T11:37:52.936Z [DEBUG] ignoring non-existing provider search directory /usr/share/terraform/plugins
+2026-04-30T11:37:52.936Z [INFO]  CLI command args: []string{"init", "-no-color"}
+Initializing modules...
+2026-04-30T11:37:52.937Z [TRACE] ModuleInstaller: installing child modules for . into .terraform/modules
+2026-04-30T11:37:52.938Z [TRACE] terraform.NewContext: starting
+2026-04-30T11:37:52.938Z [TRACE] terraform.NewContext: complete
+2026-04-30T11:37:52.938Z [TRACE] building graph for terraform dependencies
+2026-04-30T11:37:52.938Z [TRACE] Executing graph transform *terraform.RootVariableTransformer
+2026-04-30T11:37:52.938Z [TRACE] Executing graph transform *terraform.ModuleTransformer
+2026-04-30T11:37:52.938Z [TRACE] ModuleTransformer: Added module.parent as *terraform.nodeInstallModule
+2026-04-30T11:37:52.938Z [TRACE] Executing graph transform *terraform.LocalTransformer
+2026-04-30T11:37:52.938Z [TRACE] Executing graph transform *terraform.ReferenceTransformer
+2026-04-30T11:37:52.938Z [DEBUG] ReferenceTransformer: "module.parent" references: []
+2026-04-30T11:37:52.938Z [TRACE] Executing graph transform *terraform.TransformFilter
+2026-04-30T11:37:52.938Z [TRACE] Executing graph transform *terraform.variableValidationTransformer
+2026-04-30T11:37:52.938Z [TRACE] variableValidationTransformer: adding validation nodes for any existing variable evaluation nodes
+2026-04-30T11:37:52.938Z [TRACE] Executing graph transform *terraform.RootTransformer
+2026-04-30T11:37:52.938Z [TRACE] Executing graph transform *terraform.TransitiveReductionTransformer
+2026-04-30T11:37:52.938Z [TRACE] Completed graph transform:
+module.parent - *terraform.nodeInstallModule
+root - terraform.graphNodeRoot
+  module.parent - *terraform.nodeInstallModule
+  ------
+2026-04-30T11:37:52.938Z [DEBUG] Starting graph walk: walkInit
+2026-04-30T11:37:52.938Z [TRACE] vertex "module.parent": starting visit (*terraform.nodeInstallModule)
+2026-04-30T11:37:52.938Z [TRACE] vertex "module.parent": belongs to
+2026-04-30T11:37:52.938Z [DEBUG] Module installer: begin parent
+2026-04-30T11:37:52.938Z [TRACE] ModuleInstaller: parent is not yet installed
+2026-04-30T11:37:52.938Z [TRACE] ModuleInstaller: cleaning directory .terraform/modules/parent prior to install of parent
+2026-04-30T11:37:52.938Z [TRACE] ModuleInstaller: parent has local path "./parent"
+2026-04-30T11:37:52.938Z [TRACE] ModuleInstaller: parent uses directory from parent: parent
+2026-04-30T11:37:52.938Z [DEBUG] Module installer: parent installed at parent
+- parent in parent
+2026-04-30T11:37:52.938Z [TRACE] vertex "module.parent": expanding dynamic subgraph
+2026-04-30T11:37:52.939Z [TRACE] building graph for terraform dependencies
+2026-04-30T11:37:52.939Z [TRACE] Executing graph transform *terraform.ModuleVariableTransformer
+2026-04-30T11:37:52.939Z [TRACE] Executing graph transform *terraform.ModuleTransformer
+2026-04-30T11:37:52.939Z [TRACE] ModuleTransformer: Added module.parent.module.child as *terraform.nodeInstallModule
+2026-04-30T11:37:52.939Z [TRACE] Executing graph transform *terraform.LocalTransformer
+2026-04-30T11:37:52.939Z [TRACE] Executing graph transform *terraform.ReferenceTransformer
+2026-04-30T11:37:52.939Z [DEBUG] ReferenceTransformer: "module.parent.var.parent_variable (expand)" references: []
+2026-04-30T11:37:52.939Z [DEBUG] ReferenceTransformer: "module.parent.module.child" references: [module.parent.var.parent_variable (expand)]
+2026-04-30T11:37:52.939Z [TRACE] Executing graph transform *terraform.TransformFilter
+2026-04-30T11:37:52.939Z [TRACE] Executing graph transform *terraform.variableValidationTransformer
+2026-04-30T11:37:52.939Z [TRACE] variableValidationTransformer: adding validation nodes for any existing variable evaluation nodes
+2026-04-30T11:37:52.939Z [TRACE] variableValidationTransformer: module.parent.var.parent_variable has 1 validation rule(s)
+2026-04-30T11:37:52.939Z [TRACE] Executing graph transform *terraform.RootTransformer
+2026-04-30T11:37:52.939Z [TRACE] Executing graph transform *terraform.TransitiveReductionTransformer
+2026-04-30T11:37:52.939Z [TRACE] Completed graph transform:
+module.parent.module.child - *terraform.nodeInstallModule
+  module.parent.var.parent_variable (expand) - *terraform.nodeExpandModuleVariable
+module.parent.var.parent_variable (expand) - *terraform.nodeExpandModuleVariable
+module.parent.var.parent_variable (validation) - *terraform.nodeVariableValidation
+  module.parent.var.parent_variable (expand) - *terraform.nodeExpandModuleVariable
+root - terraform.graphNodeRoot
+  module.parent.module.child - *terraform.nodeInstallModule
+  module.parent.var.parent_variable (validation) - *terraform.nodeVariableValidation
+  ------
+2026-04-30T11:37:52.939Z [TRACE] vertex "module.parent": entering dynamic subgraph
+2026-04-30T11:37:52.939Z [TRACE] vertex "module.parent.var.parent_variable (expand)": starting visit (*terraform.nodeExpandModuleVariable)
+2026-04-30T11:37:52.939Z [TRACE] vertex "module.parent.var.parent_variable (expand)": does not belong to any module instance
+2026-04-30T11:37:52.939Z [TRACE] vertex "module.parent.var.parent_variable (expand)": expanding dynamic subgraph
+2026-04-30T11:37:52.939Z [TRACE] nodeExpandModuleVariable: found checkable object module.parent.var.parent_variable
+2026-04-30T11:37:52.939Z [TRACE] ReportCheckableObjects: module.parent.var.parent_variable -> module.parent.var.parent_variable
+2026-04-30T11:37:52.939Z [TRACE] vertex "module.parent.var.parent_variable (expand)": entering dynamic subgraph
+2026-04-30T11:37:52.939Z [TRACE] vertex "module.parent.var.parent_variable": starting visit (*terraform.nodeModuleVariable)
+2026-04-30T11:37:52.939Z [TRACE] vertex "module.parent.var.parent_variable": belongs to
+2026-04-30T11:37:52.939Z [TRACE] nodeModuleVariable: evaluating module.parent.var.parent_variable
+2026-04-30T11:37:52.939Z [TRACE] vertex "module.parent.var.parent_variable": visit complete
+2026-04-30T11:37:52.939Z [TRACE] vertex "root": starting visit (terraform.graphNodeRoot)
+2026-04-30T11:37:52.939Z [TRACE] vertex "root": does not belong to any module instance
+2026-04-30T11:37:52.939Z [TRACE] vertex "root": visit complete
+2026-04-30T11:37:52.939Z [TRACE] vertex "module.parent.var.parent_variable (expand)": dynamic subgraph completed successfully
+2026-04-30T11:37:52.939Z [TRACE] vertex "module.parent.var.parent_variable (expand)": visit complete
+2026-04-30T11:37:52.939Z [TRACE] vertex "module.parent.var.parent_variable (validation)": starting visit (*terraform.nodeVariableValidation)
+2026-04-30T11:37:52.939Z [TRACE] vertex "module.parent.var.parent_variable (validation)": does not belong to any module instance
+2026-04-30T11:37:52.939Z [TRACE] evalVariableValidations: validating module.parent.var.parent_variable
+2026-04-30T11:37:52.939Z [TRACE] vertex "module.parent.module.child": starting visit (*terraform.nodeInstallModule)
+2026-04-30T11:37:52.939Z [TRACE] vertex "module.parent.module.child": belongs to module.parent
+2026-04-30T11:37:52.939Z [TRACE] evalVariableValidations: module.parent.var.parent_variable status is now StatusFail
+2026-04-30T11:37:52.939Z [ERROR] vertex "module.parent.var.parent_variable (validation)" error: Invalid value for variable
+2026-04-30T11:37:52.939Z [TRACE] vertex "module.parent.var.parent_variable (validation)": visit complete, with errors
+2026-04-30T11:37:52.939Z [DEBUG] Module installer: begin parent.child
+2026-04-30T11:37:52.939Z [TRACE] ModuleInstaller: parent.child is not yet installed
+2026-04-30T11:37:52.939Z [TRACE] ModuleInstaller: cleaning directory .terraform/modules/parent.child prior to install of parent.child
+2026-04-30T11:37:52.939Z [TRACE] ModuleInstaller: parent.child has local path "./child"
+2026-04-30T11:37:52.939Z [TRACE] ModuleInstaller: parent.child uses directory from parent: parent/child
+2026-04-30T11:37:52.940Z [DEBUG] Module installer: parent.child installed at parent/child
+- parent.child in parent/child
+2026-04-30T11:37:52.940Z [TRACE] vertex "module.parent.module.child": expanding dynamic subgraph
+2026-04-30T11:37:52.940Z [TRACE] building graph for terraform dependencies
+2026-04-30T11:37:52.940Z [TRACE] Executing graph transform *terraform.ModuleVariableTransformer
+2026-04-30T11:37:52.940Z [TRACE] Executing graph transform *terraform.ModuleTransformer
+2026-04-30T11:37:52.940Z [TRACE] Executing graph transform *terraform.LocalTransformer
+2026-04-30T11:37:52.940Z [TRACE] Executing graph transform *terraform.ReferenceTransformer
+2026-04-30T11:37:52.940Z [DEBUG] ReferenceTransformer: "module.parent.module.child.var.child_variable (expand)" references: []
+2026-04-30T11:37:52.940Z [TRACE] Executing graph transform *terraform.TransformFilter
+2026-04-30T11:37:52.940Z [TRACE] Executing graph transform *terraform.variableValidationTransformer
+2026-04-30T11:37:52.940Z [TRACE] variableValidationTransformer: adding validation nodes for any existing variable evaluation nodes
+2026-04-30T11:37:52.940Z [TRACE] Executing graph transform *terraform.RootTransformer
+2026-04-30T11:37:52.940Z [TRACE] Executing graph transform *terraform.TransitiveReductionTransformer
+2026-04-30T11:37:52.940Z [TRACE] Completed graph transform:
+root - terraform.graphNodeRoot
+  ------
+2026-04-30T11:37:52.940Z [TRACE] vertex "module.parent.module.child": entering dynamic subgraph
+2026-04-30T11:37:52.940Z [TRACE] vertex "root": starting visit (terraform.graphNodeRoot)
+2026-04-30T11:37:52.940Z [TRACE] vertex "root": does not belong to any module instance
+2026-04-30T11:37:52.940Z [TRACE] vertex "root": visit complete
+2026-04-30T11:37:52.940Z [TRACE] vertex "module.parent.module.child": dynamic subgraph completed successfully
+2026-04-30T11:37:52.940Z [TRACE] vertex "module.parent.module.child": visit complete
+2026-04-30T11:37:52.940Z [TRACE] dag/walk: upstream of "root" errored, so skipping
+2026-04-30T11:37:52.940Z [TRACE] vertex "module.parent": dynamic subgraph encountered errors: Invalid value for variable
+2026-04-30T11:37:52.940Z [ERROR] vertex "module.parent" error: Invalid value for variable
+2026-04-30T11:37:52.940Z [TRACE] vertex "module.parent": visit complete, with errors
+2026-04-30T11:37:52.940Z [TRACE] dag/walk: upstream of "root" errored, so skipping
+
+Error: Invalid value for variable
+
+  on main.tf line 3, in module "parent":
+   3:   parent_variable = "input"
+
+My error message
+
+This was checked by the validation rule at parent/main.tf:3,3-13.

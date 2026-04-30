@@ -1,3 +1,4 @@
 LICENSE.txt
-terraform*
+terraform
+terraform_*
 .terraform
